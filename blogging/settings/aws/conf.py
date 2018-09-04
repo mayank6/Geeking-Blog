@@ -9,7 +9,7 @@ AWS_QUERYSTRING_AUTH = True
 DEFAULT_FILE_STORAGE = 'blogging.settings.aws.utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'blogging.settings.aws.utils.StaticRootS3BotoStorage'
 AWS_STORAGE_BUCKET_NAME = 'geekingblog'
-# S3DIRECT_REGION = 'us-west-2'
+S3DIRECT_REGION = 'us-west-2'
 S3_URL = '//geekingblog.s3.amazonaws.com/'
 MEDIA_URL = '//geekingblog.s3.amazonaws.com/media/' 
 MEDIA_ROOT = MEDIA_URL
@@ -26,3 +26,4 @@ AWS_HEADERS = {
 }
 
 AWS_DEFAULT_ACL = None
+AWS_S3_SIGNATURE_VERSION = 's3v4'
