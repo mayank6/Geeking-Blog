@@ -9,12 +9,12 @@ AWS_QUERYSTRING_AUTH = True
 DEFAULT_FILE_STORAGE = 'blogging.settings.aws.utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'blogging.settings.aws.utils.StaticRootS3BotoStorage'
 AWS_STORAGE_BUCKET_NAME = 'geekingblog'
-S3DIRECT_REGION = 'us-west-2'
+# S3DIRECT_REGION = 'us-west-2'
 S3_URL = '//geekingblog.s3.amazonaws.com/'
 MEDIA_URL = '//geekingblog.s3.amazonaws.com/media/' 
 MEDIA_ROOT = MEDIA_URL
 STATIC_URL = S3_URL + 'static/'
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'adminmayank/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 two_months = datetime.timedelta(days=61)
 date_two_months_later = datetime.date.today() + two_months
@@ -26,4 +26,3 @@ AWS_HEADERS = {
 }
 
 AWS_DEFAULT_ACL = None
-signature_version='s3v4'
