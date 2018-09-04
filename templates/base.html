@@ -14,7 +14,49 @@
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
 
-<link rel='stylesheet' href='{% static "css/base.css" %}'/>
+<style type="text/css">
+body, html {
+     min-height: 100%;
+     padding-top: 50px; 
+     padding-right:10px; 
+     padding-left:10px;
+     padding-bottom: 20px;
+}
+.bg {
+    /* The image used */
+    background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html{
+  position:relative; 
+  min-height: 100%;
+}
+/*Normalize html and body elements,this style is just good to have*/
+html,body{
+  margin:0;
+  
+}
+.pageContentWrapper{
+  margin-bottom:100px;/* Height of footer*/
+} 
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:100px;
+    background:#ccc;
+}  
+
+</style>
 
 	<title>Geeking</title>
 {% block head_extra %}
