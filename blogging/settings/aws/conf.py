@@ -14,7 +14,7 @@ S3_URL = '//geekingblog.s3.amazonaws.com/'
 MEDIA_URL = '//geekingblog.s3.amazonaws.com/media/' 
 MEDIA_ROOT = MEDIA_URL
 STATIC_URL = S3_URL + 'static/'
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'adminmayank/'
 
 two_months = datetime.timedelta(days=61)
 date_two_months_later = datetime.date.today() + two_months
@@ -26,3 +26,4 @@ AWS_HEADERS = {
 }
 
 AWS_DEFAULT_ACL = None
+signature_version='s3v4'
