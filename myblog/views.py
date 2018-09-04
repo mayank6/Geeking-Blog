@@ -29,7 +29,7 @@ def blog_home(request):
 			Q(user__first_name__icontains=query)|
 			Q(user__last_name__icontains=query)
 			).distinct()
-	paginator = Paginator(queryset_list, 6) # Show 25 contacts per page
+	paginator = Paginator(queryset_list, 3) # Show 25 contacts per page
 	page_request_var="page"
 
 	page = request.GET.get(page_request_var)
