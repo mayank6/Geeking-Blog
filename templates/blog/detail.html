@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+<meta property="og:title" content="{{instance.title}}"/>
+<meta property="og:image" content="{{instance.image}}"/>
+<meta property="og:url" content="{{ request.build_absolute_uri }}"/>
+<meta property="og:site_name" content="Blob Blog"/>
+<meta property="og:description" content="{{instance.content}}"/>
+{% endblock head_extra %}
+
+
+{% block content %}
+<nav class="navbar fixed-top navbar-light white lighten-4 auto">
+	
+	<a class="navbar-brand px-lg-4 mr-0" href="/">BLOB</a>
+
+    <span class="navbar-brand"><strong>{{ instance.title }}</strong></span>
+</nav>
+<div class='row'>
+<div class="col-sm-9"> 
+<!-- Card -->
+<div class="card card-cascade wider reverse">
+
+  <!-- Card image -->
+  <div class="view view-cascade overlay">
+    {% if instance.image %}
+    <img class="card-img-top" src="{{ instance.image.url }}" alt="Card image cap">
+    <a href="">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+    
+    {% endif %}
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+  
+  <div class="card-body card-body-cascade">
+
+    <!-- Title -->
+    <h4 class="card-title text-center"><strong>{{instance.title}}</strong></h4>
+    <!-- Subtitle -->
+    <hr>
+  <div class='row container'>
+ <div class=" mr-auto">
+ 	<p><i>Written by &nbsp </i><b>{{ instance.user.first_name}} {{ instance.user.last_name}} &nbsp|&nbsp </b><small> {{ instance.publish}}</small>&nbsp | {{ instance.read_time }} min read &nbsp|&nbsp {% if user.is_authenticated %}<a href="{% url 'posts:update' instance.slug %}">edit</a>{% endif %} &nbsp|&nbsp Tags:
+
+{% for obj in instance.tag.all %}
+<a href="{% url 'posts:tag_view' obj.tag %}" class="badge badge-primary">{{ obj.tag }}</a>
+{% endfor %}
+
+
+ 	</p>
+ 	</div>
+  {% load namify %}
+
+ 
+ <div class='ml-auto'>
+ 
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" class="px-2 fa-lg fb-ic"><i class="fa fa-facebook"></i></a>
+  
+</div>
+</div>
+<hr>
+    <!-- Text -->
+    <div class=" rimage">{{instance.get_markdown}}
+    </div>
+
+    <!-- Linkedin -->
+ <hr>  
+<hr>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://myblob-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<hr>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+</div>
+<div class="col-sm-3 border" >
+
+  <div>
+	<h3 class='text-center '>Recent Posts</h3>	
+	<hr>
+	{% for obj in objects %}
+	{% if forloop.counter0 < 5 %}
+  <div class="breakWord narrow">
+	<a href='{{ obj.get_absolute_url }}' style="color:#252617;">{{ obj.title }}</a>
+	</div>
+  <hr>
+	{% endif %}
+	{% endfor %}
+	</div>
+</div>
+	
+</div>
+
+
+<!-- Card -->
+{% endblock content %}

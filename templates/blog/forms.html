@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %} CREATE  |  {{ block.super }}{% endblock head_title %}
+
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% block content %}
+<div class='thumbnail shadow-none p-3 mb-5 bg-light rounded text-center'>
+
+
+
+<h1>Form</h1>
+<form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+{{ form | crispy }}
+<input type="submit" class="btn btn-default" name="">
+</form>
+</div>
+
+<div class='card-body card-body-cascade col-sm-8 mx-auto'><h1 class="text-center">Preview</h1>
+
+
+<div class="content-preview">
+<h3 id="preview_title"></h3>
+<div id="preview_content"></div>
+</div>
+
+</div>
+
+</div>
+{% endblock content %}

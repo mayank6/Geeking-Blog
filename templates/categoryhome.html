@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{% for obj in objects %}
+
+<a href="{{obj.get_absolute_url}}"> {{ obj.name }}
+</a>
+{% endfor %}
+
+
+</body>
+</html>

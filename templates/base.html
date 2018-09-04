@@ -1,0 +1,241 @@
+{% load static %}
+{% load meta %}
+
+<!DOCTYPE html>
+<html>
+<head {% meta_namespaces %}>
+{% include "meta/meta.html" %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+
+<link rel='stylesheet' href='{% static "css/base.css" %}'/>
+
+	<title>Geeking</title>
+{% block head_extra %}
+<meta property="og:title" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+{% endblock head_extra %}
+
+</head>
+ <body style="background-color:#D3D3D3;">
+<div class=pageContentWrapper>
+ <div id='header'>
+<!--Navbar-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light white lighten-5">
+
+    <!-- Navbar brand -->
+<div class='container'>    
+    <a class="navbar-brand px-lg-4 mr-0" href="/">Geeking</a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+        <!-- Links -->
+     <!--    <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+                <a class="nav-link" href="#"><strong>BLOG</strong>
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><strong>@nd link</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+
+           
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+
+        </ul> -->
+        <!-- Links -->
+<div class="ml-auto">
+
+ <form class="form-inline">
+            <div class="md-form my-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="q" value="{{ request.GET.q }}" required="">
+            </div>
+        </form>
+
+
+
+
+</div>
+    </div>
+    <!-- Collapsible content -->
+</div>
+</nav>
+</div>
+<!--/.Navbar-->
+
+
+    <!-- <div class="bg animated fadeInDown"></div>
+
+    <p class="py-5 text-center">This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
+ -->
+
+<div class='body'>
+  {% block content %}
+
+  {% endblock content %}
+</div>
+
+</div>
+<!-- Footer -->
+<!-- Footer -->
+<div class='footer'>
+<footer class="page-footer font-small special-color-dark pt-4">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!--Grid row-->
+      <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!-- Form -->
+          <a class="fb-ic" href='https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}'>
+              <i class="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic" href='https://twitter.com/home?status={{share_string}}%20{{ request.build_absolute_uri }}'>
+              <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic" href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}/&title={{instance.title}}&summary={{share_string}}&source={{ request.build_absolute_uri }}">
+              <i class="fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Pinterest-->
+            <a class="pin-ic">
+              <i class="fa fa-pinterest fa-lg white-text fa-2x"> </i>
+            </a>
+          <!-- Form -->
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <form class="input-group">
+            <input type="text" class="form-control form-control-sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-sm btn-outline-white" type="button">Sign up</button>
+            </div>
+          </form>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href=""> GEEKING</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+</div>
+
+  <!-- Footer -->
+<!-- JQuery -->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.4.0/marked.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".rimage img").each(function(){
+			$(this).addClass("img-fluid mx-auto d-block");
+		
+		})
+
+	
+	var contentInput = $("#id_content");
+	function setContent(value){
+		var markedContent=marked(value)
+		$("#preview_content").html(markedContent)
+		$('#preview_content img').each(function(){
+			$(this).addClass("img-fluid mx-auto d-block")
+		})
+
+	}
+	setContent(contentInput.val())
+
+	contentInput.keyup(function(){
+
+		var newContent=$(this).val()
+		setContent(newContent)
+
+	})
+	var titleInput=$("#id_title");
+
+	function setTitle(value){
+		$("#preview_title").text(value)
+	}
+	setTitle(titleInput.val())
+	
+	titleInput.keyup(function(){
+		
+		var newContent=$(this).val()
+		setTitle(newContent)
+	})
+
+})
+</script>
+
+</body>
+</html>
