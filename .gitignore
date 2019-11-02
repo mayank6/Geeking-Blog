@@ -1,4 +1,8 @@
 blogging/settings/local.py
+blogging/settings/production.py
+blogging/settings/base.py
+blogging/settings/aws/conf.py
+blogging/settings/aws/utils.py
 
 db.sqlite3
 
